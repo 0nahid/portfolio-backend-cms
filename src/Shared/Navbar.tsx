@@ -1,10 +1,23 @@
 import { useContext } from "react";
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 import { navMenu } from "../Dasboard/Dashboard";
+import auth from "../firebase.init";
 
 export default function Navbar() {
     const { theme, handleThemeChange } = useContext(AuthContext)
+    const [signOut] = useSignOut(auth);
+    const [user] = useAuthState(auth);
+    // sign out
+    const handleSignOut = async () => {
+        const success = await signOut();
+        if (success) {
+            toast.success("Signed Out Successfully")
+        }
+    }
+
     return (
         <div className="sticky top-0 z-40 backdrop-blur-2xl transition-colors duration-500">
             <div className="navbar container mx-auto">
@@ -46,6 +59,13 @@ export default function Navbar() {
                             {navMenu}
                         </ul>
                     </div>
+                    {
+                        user && <button
+                            onClick={handleSignOut}
+                        >
+                            Logout
+                        </button>
+                    }
                 </div>
             </div>
         </div>
