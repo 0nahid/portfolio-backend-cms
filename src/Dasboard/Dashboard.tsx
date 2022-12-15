@@ -1,16 +1,21 @@
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
+import { toast } from "react-hot-toast";
 import { Link, Outlet } from "react-router-dom";
+import auth from "../firebase.init";
 import Navbar from "../Shared/Navbar";
 
-export const navMenu = [
-    <>
-        <li><Link to="/dashboard/">Dashboard</Link></li>
-        <li><Link to="/dashboard/hero">Hero Section</Link></li>
-        <li><Link to="/dashboard/navmenu">Nav Menu</Link></li>
-        <li><Link to="/dashboard/manage-projects">Manage Projects</Link></li>
-    </>
-]
+
 
 export default function Dashboard() {
+    const [signOut] = useSignOut(auth);
+    const [user] = useAuthState(auth);
+    // sign out
+    const handleSignOut = async () => {
+        const success = await signOut();
+        if (success) {
+            toast.success("Signed Out Successfully")
+        }
+    }
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -23,6 +28,15 @@ export default function Dashboard() {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 text-base-content">
                     {navMenu}
+                    {
+                        user && <li>
+                            <button
+                                onClick={handleSignOut}
+                            >
+                                Logout
+                            </button>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
@@ -31,3 +45,11 @@ export default function Dashboard() {
 }
 
 
+export const navMenu = [
+    <>
+        <li><Link to="/dashboard/">Dashboard</Link></li>
+        <li><Link to="/dashboard/hero">Hero Section</Link></li>
+        <li><Link to="/dashboard/navmenu">Nav Menu</Link></li>
+        <li><Link to="/dashboard/manage-projects">Manage Projects</Link></li>
+    </>
+]

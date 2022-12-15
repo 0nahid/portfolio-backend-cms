@@ -57,15 +57,18 @@ export default function Navbar() {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {navMenu}
+                            {
+                                user && <li>
+                                    <button
+                                        onClick={handleSignOut}
+                                    >
+                                        Logout
+                                    </button>
+                                </li>
+                            }
                         </ul>
                     </div>
-                    {
-                        user && <button
-                            onClick={handleSignOut}
-                        >
-                            Logout
-                        </button>
-                    }
+
                 </div>
             </div>
         </div>
