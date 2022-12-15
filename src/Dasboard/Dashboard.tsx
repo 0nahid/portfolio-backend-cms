@@ -6,7 +6,7 @@ export const navMenu = [
         <li><Link to="/dashboard/">Dashboard</Link></li>
         <li><Link to="/dashboard/hero">Hero Section</Link></li>
         <li><Link to="/dashboard/navmenu">Nav Menu</Link></li>
-        <li><Link to="/dashboard/projects">Manage Projects</Link></li>
+        <li><Link to="/dashboard/manage-projects">Manage Projects</Link></li>
     </>
 ]
 
