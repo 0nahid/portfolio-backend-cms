@@ -48,7 +48,7 @@ export default function Login() {
                     <div className="shadow-2xl">
                         <button
                             onClick={() => signInWithGoogle()}
-                            className=" flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
+                            className="text-white flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
                         >
                             <FcGoogle className="mr-4" /> Sign in with google
                         </button>
