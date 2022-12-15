@@ -7,7 +7,7 @@ import Welcome from "../Dasboard/Welcome";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Dashboard />
+        element: <Login />
     }, {
         path: "/login",
         element: <Login />
