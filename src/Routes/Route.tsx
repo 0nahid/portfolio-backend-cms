@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../Auth/Login";
 import RequireAuth from "../Auth/RequireAuth";
-import Dashboard from "../Dasboard/Dashboard";
-import Hero from "../Dasboard/Hero";
-import ManageProject from "../Dasboard/ManageProject";
-import Navmenu from "../Dasboard/Navmenu";
-import Welcome from "../Dasboard/Welcome";
+import Dashboard from "../Dashboard/Dashboard";
+import Hero from "../Dashboard/Hero";
+import ManageProject from "../Dashboard/ManageProject";
+import Navmenu from "../Dashboard/Navmenu";
+import Welcome from "../Dashboard/Welcome";
 
 const router = createBrowserRouter([
     {

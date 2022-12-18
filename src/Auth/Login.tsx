@@ -1,42 +1,28 @@
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
-import { useEffect } from 'react';
-import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../Shared/Loading';
 import auth from '../firebase.init';
-import loginVideo from './login.mp4';
 
 export default function Login() {
     const [signInWithGoogle, gUser, gLoading] = useSignInWithGoogle(auth);
-    const [user] = useAuthState(auth);
-    const navigate = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
-
-    useEffect(() => {
-        if (user) {
-            toast.success(`Welcome Back, ${auth?.currentUser?.displayName}`, {
-                position: "top-center",
-                style: {
-                    background: "#333",
-                    color: "#fff",
-                },
-
-            })
-            navigate('/dashboard');
-        }
-    }, [from, user, navigate])
-
-    if (user?.email) {
-        navigate('/dashboard');
+    const [data] = useAuthState(auth);
+    console.log(data);
+    let location = useLocation();
+    const from = location.state?.from?.pathname || '/dashboard';
+    if (data?.email) {
+        return <Navigate to={from} replace={true} />
+    }
+    if (gLoading || gUser) {
+        <Loading />
     }
 
     return (
         <div className="flex justify-start items-center flex-col h-screen">
             <div className=" relative w-full h-full">
                 <video
-                    src={loginVideo}
+                    src="https://res.cloudinary.com/hashtagnahid/video/upload/q_50/v1671369271/login_nthosr.mp4"
                     loop
                     controls={false}
                     muted
@@ -44,7 +30,9 @@ export default function Login() {
                     className="w-full h-full object-cover"
                 />
 
-                <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0    bg-[#31313150]">
+                <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0    
+                bg-[#31313150]"
+                >
                     <div className="shadow-2xl">
                         <button
                             onClick={() => signInWithGoogle()}

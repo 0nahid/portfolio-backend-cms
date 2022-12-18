@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
+import { IoLogOut } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
-import { navMenu } from "../Dasboard/Dashboard";
+import { navMenu } from "../Dashboard/Dashboard";
 import auth from "../firebase.init";
 
 export default function Navbar() {
@@ -57,11 +58,14 @@ export default function Navbar() {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {navMenu}
+
                             {
                                 user && <li>
                                     <button
+                                        className="ring ring-error bg-error mt-3"
                                         onClick={handleSignOut}
                                     >
+                                        <IoLogOut />
                                         Logout
                                     </button>
                                 </li>

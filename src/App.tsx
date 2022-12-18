@@ -3,15 +3,23 @@ import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import { AuthContext } from "./Context/AuthProvider";
 import router from "./Routes/Route";
+import Loading from "./Shared/Loading";
 
 export default function App() {
-    const { theme } = useContext(AuthContext)
+    const { theme, loading } = useContext(AuthContext)
     return (
-        <div data-theme={
-            theme ? "night" : "light"
-        }>
-            <RouterProvider router={router}></RouterProvider>
-            <Toaster />
-        </div>
+        <>
+            {
+                loading ? <Loading /> : (
+                    <div data-theme={
+                        theme ? "night" : "light"
+                    }>
+                        <RouterProvider router={router}></RouterProvider>
+                        <Toaster />
+                    </div>
+                )
+            }
+
+        </>
     )
 }

@@ -1,10 +1,9 @@
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
+import { IoLogOut } from "react-icons/io5";
 import { Link, Outlet } from "react-router-dom";
-import auth from "../firebase.init";
 import Navbar from "../Shared/Navbar";
-
-
+import auth from "../firebase.init";
 
 export default function Dashboard() {
     const [signOut] = useSignOut(auth);
@@ -20,19 +19,21 @@ export default function Dashboard() {
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
-
                 <Navbar />
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 text-base-content">
+                <ul className="menu p-4 w-80 text-base-content"
+                >
                     {navMenu}
                     {
                         user && <li>
                             <button
+                                className="ring ring-error bg-error mt-10"
                                 onClick={handleSignOut}
                             >
+                                <IoLogOut />
                                 Logout
                             </button>
                         </li>
