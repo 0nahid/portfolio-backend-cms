@@ -1,8 +1,10 @@
 import { BsEyeFill } from "react-icons/bs";
-export default function Projects(props: any) {
-    const { name, image, description, technologies, type, _id } = props.project;
-    // console.log(props);
+interface Props {
+    project: any;
+};
 
+export default function Projects(props: Props) {
+    const { name, image, description, technologies, type, _id } = props.project;
     return (
         <>
             <tr
@@ -44,6 +46,7 @@ export default function Projects(props: any) {
                     </div>
                 </th>
             </tr>
+
         </>
     )
 }

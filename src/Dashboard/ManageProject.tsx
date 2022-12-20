@@ -21,11 +21,7 @@ export default function ManageProject() {
             }
         }
     })
-    // console.log(projects);
-
-    if (isLoading) {
-        <Loading />
-    }
+    // console.log(isLoading);
 
     const tableRow = [
         <>
@@ -38,6 +34,10 @@ export default function ManageProject() {
         </>
     ]
 
+    if (isLoading) {
+        return <Loading />
+    }
+
     return (
         <>
             <div className="overflow-x-auto w-full">
@@ -48,7 +48,8 @@ export default function ManageProject() {
                     <tbody>
                         {
                             projects?.map((project: any, index: number) => (
-                                <Projects key={project._id} project={project} />
+                                <Projects key={project._id} project={project}
+                                />
                             ))
                         }
                     </tbody>

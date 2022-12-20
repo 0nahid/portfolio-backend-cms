@@ -15,7 +15,7 @@ export default function Login() {
         return <Navigate to={from} replace={true} />
     }
     if (gLoading || gUser) {
-        <Loading />
+        return <Loading />
     }
 
     return (
