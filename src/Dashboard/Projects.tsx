@@ -6,8 +6,7 @@ interface Props {
 
 export default function Projects(props: Props) {
     const { name, image, description, technologies, type, _id } = props.project;
-
-
+    
     return (
         <>
             <tr
@@ -46,6 +45,7 @@ export default function Projects(props: Props) {
                 <th>
                     <div>
                         <label htmlFor="project-modal" 
+                        className="cursor-pointer"
                         onClick={() => props.setSingleProject(props.project)}
                         ><BsEyeFill className="h-5 w-5" /></label>
                     </div>

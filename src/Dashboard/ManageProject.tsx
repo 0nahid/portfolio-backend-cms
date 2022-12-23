@@ -23,6 +23,10 @@ export default function ManageProject() {
             }
         }
     })
+
+    const [singleProject, setSingleProject] = useState({})
+    // console.log(singleProject);
+
     // console.log(isLoading);
 
     const tableRow = [
@@ -35,10 +39,6 @@ export default function ManageProject() {
             </tr>
         </>
     ]
-
-    const [singleProject, setSingleProject] = useState({})
-    console.log(singleProject);
-
 
     if (isLoading) {
         return <Loading />
@@ -66,6 +66,8 @@ export default function ManageProject() {
             <>
                 <ProjectModal
                     singleProject={singleProject}
+                    setSingleProject={setSingleProject}
+                    isLoading={isLoading}
                 />
             </>
         </>
