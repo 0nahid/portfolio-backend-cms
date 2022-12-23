@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
+import { useState } from "react"
 import { toast } from "react-hot-toast"
 import Loading from "../Shared/Loading"
+import ProjectModal from "./ProjectModal"
 import Projects from "./Projects"
 
 export default function ManageProject() {
@@ -34,6 +36,10 @@ export default function ManageProject() {
         </>
     ]
 
+    const [singleProject, setSingleProject] = useState({})
+    console.log(singleProject);
+
+
     if (isLoading) {
         return <Loading />
     }
@@ -48,18 +54,20 @@ export default function ManageProject() {
                     <tbody>
                         {
                             projects?.map((project: any, index: number) => (
-                                <Projects key={project._id} project={project}
-                                />
+                                <Projects key={project._id} project={project} setSingleProject={setSingleProject} />
                             ))
                         }
                     </tbody>
                     <tfoot>
                         {tableRow}
                     </tfoot>
-
                 </table>
             </div>
-            
+            <>
+                <ProjectModal
+                    singleProject={singleProject}
+                />
+            </>
         </>
     )
 }

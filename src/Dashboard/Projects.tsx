@@ -1,20 +1,12 @@
-import { useState } from "react";
 import { BsEyeFill } from "react-icons/bs";
-import ModalData from "./ModalData";
 interface Props {
     project: any;
+    setSingleProject: any;
 };
 
 export default function Projects(props: Props) {
     const { name, image, description, technologies, type, _id } = props.project;
-    const [data, setData] = useState({})
-    const handleModal = (data: any) => {
-        setData(data)
-    }
-    const handleModalClose = () => {
-        setData({})
-    }
-    console.log(data);
+
 
     return (
         <>
@@ -53,17 +45,12 @@ export default function Projects(props: Props) {
                 </td>
                 <th>
                     <div>
-                        <label htmlFor="my-modal-3"
-                            onClick={() => handleModal(props.project._id)}
-                            className=""> <BsEyeFill className="h-5 w-5" /></label>
+                        <label htmlFor="project-modal" 
+                        onClick={() => props.setSingleProject(props.project)}
+                        ><BsEyeFill className="h-5 w-5" /></label>
                     </div>
                 </th>
             </tr>
-            {
-                data && <ModalData data={data} setData={setData}
-                    handleModalClose={handleModalClose}
-                />
-            }
         </>
     )
 }
