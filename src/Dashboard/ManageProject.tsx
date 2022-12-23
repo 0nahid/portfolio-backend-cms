@@ -7,7 +7,7 @@ import ProjectModal from "./ProjectModal"
 import Projects from "./Projects"
 
 export default function ManageProject() {
-    const { data: projects, isLoading, error, refetch } = useQuery({
+    const { data: projects, isLoading } = useQuery({
         queryKey: ['projects'],
         queryFn: async () => {
             try {
