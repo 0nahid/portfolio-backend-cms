@@ -5,8 +5,8 @@ module.exports = {
   ],
   daisyui: {
     themes: [
-      "light",
-      "night"
+      "emerald",
+      "dracula"
     ]
   },
   plugins: [require("daisyui")],

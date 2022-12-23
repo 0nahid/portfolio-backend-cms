@@ -12,7 +12,7 @@ export default function App() {
             {
                 loading ? <Loading /> : (
                     <div data-theme={
-                        theme ? "night" : "light"
+                        theme ? "dracula" : "emerald"
                     }>
                         <RouterProvider router={router}></RouterProvider>
                         <Toaster />
