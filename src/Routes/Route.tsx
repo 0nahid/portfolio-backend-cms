@@ -6,6 +6,7 @@ import Hero from "../Dashboard/Hero";
 import ManageProject from "../Dashboard/ManageProject";
 import Navmenu from "../Dashboard/Navmenu";
 import Welcome from "../Dashboard/Welcome";
+import AddProject from "../Dashboard/AddProject";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/navmenu',
                 element: <Navmenu />
+            },
+            {
+                path: '/dashboard/add-project',
+                element: <AddProject />
             }
         ]
     }
