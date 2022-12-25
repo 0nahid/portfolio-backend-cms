@@ -1,13 +1,19 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
+import handleMultipleErrors from "../Hooks/handleMulripleErrors";
 import useCatagories from "../Hooks/useCatagories";
-type Inputs = {
+export type Inputs = {
     name: string;
     description: string;
     category: string;
+    codeLink: string;
+    liveLink: string;
+    image: string;
+    backendLink: string;
 };
 
 
@@ -30,8 +36,8 @@ export default function AddProject() {
     // }, [])
 
     const categories = useCatagories();
-    console.log(categories);
-    
+    // console.log(categories);
+
 
     const onSubmit: SubmitHandler<Inputs> = data => {
         if (!state) {
@@ -42,17 +48,17 @@ export default function AddProject() {
             ...data,
             description: state  // this is the value of the quill editor
         }
-        console.log(newData);
-
-        setLoading(true);
+        // console.log(newData);
+        // setLoading(true);
         axios.post("http://localhost:5000/api/v1/projects/new", newData)
             .then(res => {
-                console.log(res);
-                setLoading(false);
-            })
-
+                console.log(res.data);
+                toast.success("Project added successfully");
+            }
+            )
+            .catch(err => handleMultipleErrors(err))
     }
-    console.log(state.length);
+    // console.log(state.length);
 
     const modules = {
         toolbar: [
@@ -73,7 +79,7 @@ export default function AddProject() {
 
     return (
         <>
-            <h1>Add Project</h1>
+            <h1 className="text-center text-2xl font-bold">Add Project</h1>
             <div className="max-w-[1100px] mx-auto rounded-xl">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="my-2">
@@ -118,7 +124,32 @@ export default function AddProject() {
                             ))}
                         </select>
                     </div>
+                    <div className="my-2">
+                        <label htmlFor="name" className="my-2">
+                            Code Link
+                        </label>
+                        <input type="url" placeholder="Code Link" className="input input-bordered w-full" {...register("codeLink")} />
+                    </div>
+                    <div className="my-2">
+                        <label htmlFor="name" className="my-2">
+                            Live Link
+                        </label>
+                        <input type="url" placeholder="Live Link" className="input input-bordered w-full" {...register("liveLink")} />
+                    </div>
 
+                    <div className="my-2">
+                        <label htmlFor="name" className="my-2">
+                            Backend Link
+                        </label>
+                        <input type="url" placeholder="Backend Link" className="input input-bordered w-full" {...register("backendLink")} />
+                    </div>
+
+                    <div className="my-2">
+                        <label htmlFor="name" className="my-2">
+                            Image
+                        </label>
+                        <input type="url" placeholder="Image" className="input input-bordered w-full" {...register("image")} />
+                    </div>
                     <div className="my-3 text-right">
                         <button
                             className="btn btn-primary text-white"

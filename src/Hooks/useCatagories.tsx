@@ -6,7 +6,7 @@ const useCatagories = () => {
     useEffect(() => {
         axios.get("http://localhost:5000/api/v1/categories/all")
             .then(res => {
-                console.log(res.data.category);
+                // console.log(res.data.category);
                 setCatagories(res.data.category)
             })
             .catch(err => {

@@ -4,12 +4,8 @@ import { RxCross2 } from "react-icons/rx";
 import ReactQuill from 'react-quill';
 import useCatagories from '../Hooks/useCatagories';
 import Loading from '../Shared/Loading';
+import { Inputs } from './AddProject';
 
-type Inputs = {
-    name: string;
-    description: string;
-    category: string;
-};
 
 interface Props {
     singleProject: any;
@@ -34,7 +30,7 @@ export default function EditProjectData(props: Props) {
         }
         console.log(newData);
     }
-    console.log(errors);
+    // console.log(errors);
     const modules = {
         toolbar: [
             [{ 'header': [1, 2, false] }],
@@ -74,7 +70,7 @@ export default function EditProjectData(props: Props) {
                             <input
                                 type="text"
                                 placeholder={name}
-                                value={name}
+                                defaultValue={name}
                                 className="input input-bordered w-full"
                                 {...register("name", { required: true })}
                             />
@@ -87,9 +83,7 @@ export default function EditProjectData(props: Props) {
                                 Product Description
                             </label>
                             <ReactQuill
-                                value={
-                                    description
-                                }
+                                defaultValue={description}
                                 onChange={setState}
                                 modules={modules}
                                 formats={formats}
