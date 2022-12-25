@@ -1,0 +1,19 @@
+.ql-container {
+    @apply whitespace-pre-wrap p-0;
+  
+    ol {
+      @apply list-inside list-decimal py-3;
+    }
+  
+    ul {
+      @apply list-inside list-disc py-3;
+    }
+  
+    blockquote {
+      @apply bg-gray-50 border-l border-indigo-200 p-2;
+    }
+  
+    pre {
+      @apply bg-gray-50 p-2 my-2 text-sm;
+    }
+  }

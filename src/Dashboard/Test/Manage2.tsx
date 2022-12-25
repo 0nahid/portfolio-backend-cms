@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import '../Editor.scss';
 export default function Manage2() {
     const [data, setData] = useState([])
     useEffect(() => {
@@ -20,9 +20,19 @@ export default function Manage2() {
                         >
                             <h1>{item.name}</h1>
                             {/* render html + li */}
-                            <div dangerouslySetInnerHTML={
-                                { __html: item.description }
-                            }></div>
+                            <div
+                                className="ql-container"
+                            >
+                                <span
+                                    dangerouslySetInnerHTML={
+                                        { __html: item.description }
+                                    }></span>
+
+                            </div>
+                            <h3>Code:{item.codeLink}</h3>
+                            <h3>Live:{item.liveLink}</h3>
+                            <h3>Backend:{item.backendLink}</h3>
+                            <h3>Category:{item.category.type}</h3>
                         </div>
                     )
                 })
