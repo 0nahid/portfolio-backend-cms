@@ -1,3 +1,4 @@
+import { RxCross2 } from "react-icons/rx";
 import Loading from "../Shared/Loading";
 interface Props {
     singleProject: any;
@@ -13,10 +14,9 @@ export default function ProjectModal(props: Props) {
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <label
-                        onClick={() => props.setSingleProject({})}
-                        htmlFor="project-modal" className="btn btn-sm btn-error text-white btn-circle absolute right-2 top-2 ">✕</label>
-                    <img src={image} alt={name} className="mt-6" />
+                        htmlFor="project-modal" className="btn btn-sm btn-circle btn-error absolute right-2 top-2 ">  <RxCross2 /></label>
                     <h3 className="font-bold text-lg rounded-sm"> {name} </h3>
+                    <img src={image} alt={name} className="mt-6" />
                     <p>
                         {description}
                     </p>

@@ -1,4 +1,7 @@
+import { BiMessageSquareEdit } from "react-icons/bi";
 import { BsEyeFill } from "react-icons/bs";
+import { MdDeleteForever } from "react-icons/md";
+
 interface Props {
     project: any;
     setSingleProject: any;
@@ -6,7 +9,7 @@ interface Props {
 
 export default function Projects(props: Props) {
     const { name, image, description, technologies, type, _id } = props.project;
-    
+
     return (
         <>
             <tr
@@ -43,11 +46,19 @@ export default function Projects(props: Props) {
                     {type?.charAt(0).toUpperCase() + type?.slice(1)}
                 </td>
                 <th>
-                    <div>
-                        <label htmlFor="project-modal" 
-                        className="cursor-pointer"
-                        onClick={() => props.setSingleProject(props.project)}
+                    <div
+                        className="flex items-center space-x-3"
+                    >
+                        <label htmlFor="project-modal"
+                            className="cursor-pointer"
+                            onClick={() => props.setSingleProject(props.project)}
                         ><BsEyeFill className="h-5 w-5" /></label>
+
+                        <label
+                            onClick={() => props.setSingleProject(props.project)}
+                            htmlFor="edit-project" className="cursor-pointer"><BiMessageSquareEdit className="h-5 w-5" /></label>
+
+                        <MdDeleteForever className="h-5 w-5" />
                     </div>
                 </th>
             </tr>

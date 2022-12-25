@@ -18,11 +18,11 @@ export default function Dashboard() {
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
+            <div className="drawer-content md:ml-2 shadow-xl rounded md:p-2">
                 <Navbar />
                 <Outlet></Outlet>
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side shadow-2xl mr-2 rounded-xl">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 text-base-content"
                 >
@@ -53,5 +53,6 @@ export const navMenu = [
         <li><Link to="/dashboard/navmenu">Nav Menu</Link></li>
         <li><Link to="/dashboard/manage-projects">Manage Projects</Link></li>
         <li><Link to="/dashboard/add-project">Add Project</Link></li>
+        <li><Link to="/dashboard/manage-2">Manage 2</Link></li>
     </>
 ]

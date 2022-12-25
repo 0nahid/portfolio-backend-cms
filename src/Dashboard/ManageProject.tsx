@@ -3,6 +3,7 @@ import axios from "axios"
 import { useState } from "react"
 import { toast } from "react-hot-toast"
 import Loading from "../Shared/Loading"
+import EditProjectData from "./EditProjectData"
 import ProjectModal from "./ProjectModal"
 import Projects from "./Projects"
 
@@ -65,6 +66,11 @@ export default function ManageProject() {
             </div>
             <>
                 <ProjectModal
+                    singleProject={singleProject}
+                    setSingleProject={setSingleProject}
+                    isLoading={isLoading}
+                />
+                <EditProjectData
                     singleProject={singleProject}
                     setSingleProject={setSingleProject}
                     isLoading={isLoading}
