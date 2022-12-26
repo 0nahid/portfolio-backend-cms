@@ -9,7 +9,7 @@ interface Props {
 
 export default function Projects(props: Props) {
     const { name, image, description, technologies, _id, category } = props.project;
-    console.log(props.project);
+    // console.log(props.project);
 
     const handleDelete = (id: string) => {
         console.log(`Delete ${id}`);
@@ -32,7 +32,7 @@ export default function Projects(props: Props) {
                     </div>
                 </td>
                 <td>
-                    <div className="flex">
+                    <div className="flex ql-container">
                         <span
                             dangerouslySetInnerHTML={
                                 { __html: description?.slice(0, 80) }

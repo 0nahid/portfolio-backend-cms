@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 import { RxCross2 } from "react-icons/rx";
 import ReactQuill from 'react-quill';
 import useCatagories from '../Hooks/useCatagories';
@@ -15,20 +16,29 @@ interface Props {
 
 export default function EditProjectData(props: Props) {
     const { name, image, description, technologies, type, _id } = props?.singleProject;
+    console.log(`description: ${description}`);
+    const [state, setState] = useState<String>(description)
+    console.log(`state: ${state}`);
 
-    const [state, setState] = useState("")
     const [descriptionError, setDescriptionError] = useState("");
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => {
         if (!state) {
             setDescriptionError("Description is required");
             return;
         }
         const newData = {
+            //    if the user doesn't change the value of the input then use the old value
+            // name: data.name || name,
+            // image: data.image || image,
+            // description: state || description,
+            // technologies: data.technologies || technologies,
+            // type: data.type || type,
             ...data,
-            description: state  // this is the value of the quill editor
+            description: state
         }
         console.log(newData);
+        toast.success(`Project ${name} updated successfully !`)
     }
     // console.log(errors);
     const modules = {
@@ -56,7 +66,7 @@ export default function EditProjectData(props: Props) {
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <label
-                        onClick={() => props.setSingleProject({})}
+                        onClick={() => props.setSingleProject("")}
                         htmlFor="edit-project" className="btn btn-sm btn-circle btn-error absolute right-2 top-2">
                         <RxCross2 />
                     </label>
@@ -72,7 +82,7 @@ export default function EditProjectData(props: Props) {
                                 placeholder={name}
                                 defaultValue={name}
                                 className="input input-bordered w-full"
-                                {...register("name", { required: true })}
+                                {...register("name")}
                             />
                             {errors.name?.type === "required" && (
                                 <span className="text-error">Project name is required</span>
@@ -83,12 +93,13 @@ export default function EditProjectData(props: Props) {
                                 Product Description
                             </label>
                             <ReactQuill
+                                // value={description}
                                 defaultValue={description}
                                 onChange={setState}
                                 modules={modules}
                                 formats={formats}
                                 theme="snow" />
-                            {(state.length < 8 || state.length < 11) ? (
+                            {(state?.length < 8 || state?.length < 11) ? (
                                 <span className="text-error">{descriptionError}</span>
                             ) : null
                             }
@@ -99,7 +110,7 @@ export default function EditProjectData(props: Props) {
                             </label>
                             <select
                                 className="input input-bordered"
-                                {...register("category", { required: true })}
+                                {...register("category")}
                             >
                                 {categories.map((category: any) => (
                                     <option key={category._id} value={category._id}>{category.type}</option>
@@ -110,11 +121,12 @@ export default function EditProjectData(props: Props) {
                         <div className="my-3 text-right">
                             <button
                                 className="btn btn-primary text-white"
-                            // disabled={!loading}
+                            // disabled
                             >
                                 Update
                             </button>
                         </div>
+                        <p className="text-red-400 text-xl">Edit function will be added soon...</p>
                     </form>
                 </div>
             </div>

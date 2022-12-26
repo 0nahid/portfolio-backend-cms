@@ -14,6 +14,7 @@ export type Inputs = {
     liveLink: string;
     image: string;
     backendLink: string;
+    type : string;
     technologies: string;
 };
 

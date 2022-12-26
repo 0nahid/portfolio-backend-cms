@@ -23,13 +23,13 @@ export default function ProjectModal(props: Props) {
                         htmlFor="project-modal" className="btn btn-sm btn-circle btn-error absolute right-2 top-2 ">  <RxCross2 /></label>
                     <h3 className="font-bold text-lg rounded-sm"> {name} </h3>
                     <img src={image} alt={name} className="mt-6" />
-                    <p>
+                    <div className="ql-container">
                         <span
                             dangerouslySetInnerHTML={
                                 { __html: description?.slice(0, 80) }
                             }>
                         </span>
-                    </p>
+                    </div>
                     {
                         technologies?.map((tech: any, index: number) => (
                             <span
