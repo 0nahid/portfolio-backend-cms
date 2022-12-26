@@ -12,7 +12,7 @@ export default function ManageProject() {
         queryKey: ['projects'],
         queryFn: async () => {
             try {
-                const response = await axios(`${process.env.REACT_APP_SERVER}/projects`)
+                const response = await axios(`${process.env.REACT_APP_SERVER}/api/v1/projects/all`)
                 // console.log(response);
 
                 if (response.status !== 200) {
@@ -43,6 +43,14 @@ export default function ManageProject() {
 
     if (isLoading) {
         return <Loading />
+    }
+
+    if(projects?.length === 0) {
+        return (
+            <div className="flex justify-center items-center">
+                <h1 className="text-2xl text-gray-500">No Projects Found</h1>
+            </div>
+        )
     }
 
     return (

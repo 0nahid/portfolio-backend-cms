@@ -14,11 +14,12 @@ export type Inputs = {
     liveLink: string;
     image: string;
     backendLink: string;
+    technologies: string;
 };
 
 
 export default function AddProject() {
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>();
     const [state, setState] = useState("")
     const [descriptionError, setDescriptionError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -44,16 +45,28 @@ export default function AddProject() {
             setDescriptionError("Description is required");
             return;
         }
+        // make array of technologies object & remove spaces & remove " from the string
+        const technologies = data.technologies.split(",").map((item: string) => {
+            return item.trim().replace(/"/g, "")
+        })
+        // console.log(technologies);
+
         const newData = {
             ...data,
+            technologies,
             description: state  // this is the value of the quill editor
         }
-        // console.log(newData);
-        // setLoading(true);
+        console.log(newData);
+        setLoading(true);
         axios.post("http://localhost:5000/api/v1/projects/new", newData)
             .then(res => {
-                console.log(res.data);
-                toast.success("Project added successfully");
+                if (res.status === 201) {
+                    setLoading(false);
+                    reset();
+                    setState("");
+                    toast.success("Project added successfully");
+                }
+
             }
             )
             .catch(err => handleMultipleErrors(err))
@@ -150,10 +163,17 @@ export default function AddProject() {
                         </label>
                         <input type="url" placeholder="Image" className="input input-bordered w-full" {...register("image")} />
                     </div>
+
+                    <div className="my-2">
+                        <label htmlFor="name" className="my-2">
+                            Technologies Used
+                        </label>
+                        <input type="text" placeholder="Technologies Used" className="input input-bordered w-full" {...register("technologies")} />
+                    </div>
                     <div className="my-3 text-right">
                         <button
                             className="btn btn-primary text-white"
-                        // disabled={!loading}
+                        disabled={loading}
                         >
                             Save Project
                         </button>

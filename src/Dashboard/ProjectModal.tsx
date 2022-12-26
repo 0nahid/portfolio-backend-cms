@@ -1,12 +1,18 @@
 import { RxCross2 } from "react-icons/rx";
+import { SiReacttable, SiTsnode } from "react-icons/si";
+import { VscLiveShare } from "react-icons/vsc";
+
 import Loading from "../Shared/Loading";
+
 interface Props {
     singleProject: any;
     setSingleProject: any;
     isLoading: boolean;
 }
 export default function ProjectModal(props: Props) {
-    const { name, image, description, technologies, type, _id } = props?.singleProject;
+    const { name, image, description, technologies, category, codeLink, liveLink, backendLink } = props?.singleProject;
+    // console.log(props.singleProject);
+
     if (props.isLoading) return <Loading />
     return (
         <>
@@ -18,7 +24,11 @@ export default function ProjectModal(props: Props) {
                     <h3 className="font-bold text-lg rounded-sm"> {name} </h3>
                     <img src={image} alt={name} className="mt-6" />
                     <p>
-                        {description}
+                        <span
+                            dangerouslySetInnerHTML={
+                                { __html: description?.slice(0, 80) }
+                            }>
+                        </span>
                     </p>
                     {
                         technologies?.map((tech: any, index: number) => (
@@ -31,14 +41,17 @@ export default function ProjectModal(props: Props) {
                                 }>{tech}</span>
                         ))
                     }
-                    <p
-                        className="font-bold"
-                    >
-                        Type:  {type?.charAt(0).toUpperCase() + type?.slice(1)}
-                    </p>
-                    <p>Live link:
-                        {_id}
-                    </p>
+                    <p>Type:  {category?.type?.charAt(0).toUpperCase() + category?.type?.slice(1)}</p>
+                    <div className="flex items-center">
+                        <a href={liveLink} target="_blank" rel="noreferrer" className="flex hover:underline items-center"> <VscLiveShare className="mr-1" /> Live Link</a>
+                    </div>
+                    <div className="flex items-center">
+                        <a href={backendLink} target="_blank" rel="noreferrer" className="flex hover:underline items-center"> <SiTsnode className="mr-1" /> Backend</a>
+                    </div>
+                    <div className="flex items-center">
+                        <a href={liveLink} target="_blank" rel="noreferrer" className="flex hover:underline items-center"> <SiReacttable className="mr-1" /> Frontend</a>
+                    </div>
+
                 </div>
             </div>
         </>

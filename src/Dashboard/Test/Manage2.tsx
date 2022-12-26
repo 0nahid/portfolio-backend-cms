@@ -32,7 +32,7 @@ export default function Manage2() {
                             <h3>Code:{item.codeLink}</h3>
                             <h3>Live:{item.liveLink}</h3>
                             <h3>Backend:{item.backendLink}</h3>
-                            <h3>Category:{item.category.type}</h3>
+                            {/* <h3>Category:{item.category.type}</h3> */}
                         </div>
                     )
                 })

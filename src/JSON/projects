@@ -1,0 +1,295 @@
+[{
+  "_id": {
+    "$oid": "6398a45c7cb68dfe2f1bda09"
+  },
+  "name": "Red Onion Restaurant",
+  "description": "Thundering Red Onion Restaurant where you can order your favorite food and get it delivered.",
+  "frontendUrl": "https://github.com/0nahid/red-onion",
+  "backendUrl": "https://github.com/0nahid/red-onion",
+  "liveUrl": "https://redonionresturant.netlify.app/",
+  "image": "https://res.cloudinary.com/hashtagnahid/image/upload/v1663956875/redonionresturant.netlify.app__soa6cy.png",
+  "type": "fullstack",
+  "technologies": [
+    "React",
+    "Typescript",
+    "TailwindCSS",
+    "NodeJS",
+    "ExpressJS",
+    "MongoDB"
+  ]
+},{
+  "_id": {
+    "$oid": "6398a45c7cb68dfe2f1bda07"
+  },
+  "name": "Aesthetic Outfit",
+  "description": "Aesthetic Ware House where you can find your favorite outfit and buy it.",
+  "frontendUrl": "https://github.com/0nahid/aesthetic-warehouse-client",
+  "backendUrl": "https://github.com/0nahid/aesthetic-warehouse-backend",
+  "liveUrl": "https://aesthetic-outfit.web.app/",
+  "image": "https://res.cloudinary.com/hashtagnahid/image/upload/v1663953942/aesthetic-outfit.web.app__jm0wms.png",
+  "type": "fullstack",
+  "technologies": [
+    "React",
+    "TailwindCSS",
+    "DaisyUI",
+    "NodeJS",
+    "ExpressJS",
+    "MongoDB"
+  ]
+},{
+  "_id": {
+    "$oid": "6398a45c7cb68dfe2f1bda06"
+  },
+  "name": "Pinterest Clone",
+  "description": "The real Pinterest clone with all the features like login, signup, create board, create pin,  like, unlike, comment etc.",
+  "frontendUrl": "https://github.com/0nahid/pinterest-clone/tree/main/pinterest_frontend",
+  "backendUrl": "https://github.com/0nahid/pinterest-clone/tree/main/pinterest_backend",
+  "liveUrl": "https://pinterest-2.netlify.app/",
+  "image": "https://res.cloudinary.com/hashtagnahid/image/upload/v1663822441/pinterest-2.netlify.app_search_dg0bgg.png",
+  "type": "fullstack",
+  "technologies": [
+    "React",
+    "Sanity",
+    "MasionaryCSS",
+    "NodeJs",
+    "ExpressJS",
+    "Cloudinary"
+  ]
+},{
+  "_id": {
+    "$oid": "6398a45c7cb68dfe2f1bda08"
+  },
+  "name": "Car Parts BD Ltd            ",
+  "description": "Car Parts BD Ltd is a car parts selling website where you can find your favorite car parts and buy it.",
+  "frontendUrl": "https://github.com/0nahid/car-manufacturer-client",
+  "backendUrl": "https://github.com/0nahid/car-manufacturer-server",
+  "liveUrl": "https://car-parts-bangladesh.web.app/",
+  "image": "https://res.cloudinary.com/hashtagnahid/image/upload/v1663954382/car-parts-bangladesh.web.app__ph5kjy.png",
+  "type": "fullstack",
+  "technologies": [
+    "React",
+    "Stripe",
+    "TailwindCSS",
+    "DaisyUI",
+    "NodeJS",
+    "ExpressJS",
+    "MongoDB"
+  ]
+},{
+  "_id": {
+    "$oid": "6398a45c7cb68dfe2f1bda0a"
+  },
+  "name": "NSoft",
+  "description": "NSoft is a simple NextJS website with tailblocks components.",
+  "frontendUrl": "#",
+  "backendUrl": "#",
+  "liveUrl": "https://nsoft.netlify.app/",
+  "image": "https://res.cloudinary.com/hashtagnahid/image/upload/v1663957264/nsoft.netlify.app__1_imetru.png",
+  "type": "fullstack",
+  "technologies": [
+    "NextJS",
+    "TailwindCSS",
+    "TailBlock"
+  ]
+},{
+  "_id": {
+    "$oid": "6398a45c7cb68dfe2f1bda0b"
+  },
+  "name": "Github API",
+  "description": "Github API",
+  "frontendUrl": "https://github.com/0nahid/github-user",
+  "backendUrl": "https://github.com/0nahid/github-user",
+  "liveUrl": "https://ghub.pages.dev/",
+  "image": "https://res.cloudinary.com/hashtagnahid/image/upload/v1664307186/github-user-details.vercel.app__wiaj6k.png",
+  "type": "fullstack",
+  "technologies": [
+    "React",
+    "TailwindCSS",
+    "Github API",
+    "Vercel"
+  ]
+},{
+  "_id": {
+    "$oid": "6398a5fd7cb68dfe2f2025db"
+  },
+  "name": "Random Users ?",
+  "description": "A full stack web application where users can see random users and can see their details. Users can also add a new user.",
+  "image": "https://images.unsplash.com/photo-1641465466286-a212311fc62d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  "code": "https://github.com/0nahid/node-acc-1",
+  "liveApi": "https://node-mongo-crash-api.herokuapp.com/user/random",
+  "type": "backend",
+  "technologies": [
+    "NodeJs",
+    "Express",
+    "Node FS",
+    "Typescript",
+    "Color"
+  ]
+},{
+  "_id": {
+    "$oid": "6398a5fd7cb68dfe2f2025dc"
+  },
+  "name": "Car Parts",
+  "description": "A full stack web application where users can see car parts and can see their details. valid users can add a new car part with stripe payment gateway. Admin can add a new car part & admin can make new admin for store operations.",
+  "image": "https://images.unsplash.com/photo-1600191763437-4262cefe23ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  "code": "https://github.com/0nahid/car-manufacturer-server",
+  "liveApi": "https://car-parts-bangladesh.herokuapp.com/api/services",
+  "type": "backend",
+  "technologies": [
+    "NodeJs",
+    "Express",
+    "JavaScript",
+    "Stripe",
+    "JWT",
+    "Token"
+  ]
+},{
+  "_id": {
+    "$oid": "6398a5fd7cb68dfe2f2025da"
+  },
+  "name": "Tours and Travels",
+  "description": "A full stack web application where users can book a tour and can see their booking list. Admin can add a new tour and can see all the bookings.",
+  "image": "https://images.unsplash.com/photo-1530789253388-582c481c54b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  "code": "https://github.com/0nahid/tours-acc-2",
+  "liveApi": "http://34.95.32.168:5000/",
+  "type": "backend",
+  "technologies": [
+    "NodeJs",
+    "Express",
+    "MongoDB",
+    "Mongoose",
+    "Typescript",
+    "Color"
+  ]
+},{
+  "_id": {
+    "$oid": "63a93e41b070486b1d630f84"
+  },
+  "name": "Test",
+  "description": "<p>This is a test project </p><ol><li>Test 1</li><li>Test 2</li></ol><ul><li>Test 3</li><li>Test 4</li></ul><p><strong>Test 5</strong></p><p><strong><em>Test 5</em></strong></p><p><strong><em><u>Test 6</u></em></strong></p>",
+  "category": {
+    "$oid": "63a5cd73f715daeadbc9ce2c"
+  },
+  "codeLink": "https://www.vadohoquxozedu.com",
+  "backendLink": "https://www.tavymuzezagum.com",
+  "liveLink": "https://www.rewypagapage.mobi",
+  "technologies": [],
+  "image": "https://i.pinimg.com/564x/a2/a6/53/a2a653996c535bbdd95754d7d2a11666.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672035905546"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1672035905546"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a93fdcb070486b1d630f97"
+  },
+  "name": "Alexis Sanders",
+  "description": "<p>Non unde minima prae.</p>",
+  "category": {
+    "$oid": "63a5cd73f715daeadbc9ce2c"
+  },
+  "codeLink": "https://www.jowyqo.cm",
+  "backendLink": "https://www.vunotixegahaduv.mobi",
+  "liveLink": "https://www.vivibefamez.mobi",
+  "technologies": [],
+  "image": "https://www.habubaxiqe.cc",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672036316903"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1672036316903"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a940a3b070486b1d630fa7"
+  },
+  "name": "Ina Ochoa",
+  "description": "<p>Harum aut dolor illo.</p>",
+  "category": {
+    "$oid": "63a5d03870257ba9a087ad3c"
+  },
+  "codeLink": "https://www.dehuwinyfir.me.uk",
+  "backendLink": "https://www.pyfujojavyzo.me",
+  "liveLink": "https://www.hydamihanyse.ca",
+  "technologies": [
+    "Test Mongo"
+  ],
+  "image": "https://www.socidixire.org.uk",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672036515054"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1672036515054"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a940afb070486b1d630faa"
+  },
+  "name": "Ina Ochoa",
+  "description": "<p>Harum aut dolor illo.</p>",
+  "category": {
+    "$oid": "63a5d03870257ba9a087ad3c"
+  },
+  "codeLink": "https://www.dehuwinyfir.me.uk",
+  "backendLink": "https://www.pyfujojavyzo.me",
+  "liveLink": "https://www.hydamihanyse.ca",
+  "technologies": [
+    "Test Mongo , uyf ,vity"
+  ],
+  "image": "https://www.socidixire.org.uk",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672036527671"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1672036527671"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a9410fb070486b1d630fb3"
+  },
+  "name": "Jin Butler",
+  "description": "<p>In quo aliquid in li.</p>",
+  "category": {
+    "$oid": "63a5cd73f715daeadbc9ce2c"
+  },
+  "codeLink": "https://www.pexulisoco.org.uk",
+  "backendLink": "https://www.zeferigohep.com.au",
+  "liveLink": "https://www.cynagu.org",
+  "technologies": [
+    "Ex vel autem laboris"
+  ],
+  "image": "https://www.xoquqidebyru.in",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672036623877"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1672036623877"
+    }
+  },
+  "__v": 0
+}]

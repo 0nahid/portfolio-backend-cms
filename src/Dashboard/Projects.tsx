@@ -8,8 +8,12 @@ interface Props {
 };
 
 export default function Projects(props: Props) {
-    const { name, image, description, technologies, type, _id } = props.project;
+    const { name, image, description, technologies, _id, category } = props.project;
+    console.log(props.project);
 
+    const handleDelete = (id: string) => {
+        console.log(`Delete ${id}`);
+    }
     return (
         <>
             <tr
@@ -28,7 +32,15 @@ export default function Projects(props: Props) {
                     </div>
                 </td>
                 <td>
-                    {description?.slice(0, 20)}...
+                    <div className="flex">
+                        <span
+                            dangerouslySetInnerHTML={
+                                { __html: description?.slice(0, 80) }
+                            }>
+                        </span> <span>
+                            {description?.length > 80 && "..."}
+                        </span>
+                    </div>
                     <br />
                     {
                         technologies?.map((tech: any, index: number) => (
@@ -43,7 +55,7 @@ export default function Projects(props: Props) {
                     }
                 </td>
                 <td>
-                    {type?.charAt(0).toUpperCase() + type?.slice(1)}
+                    {category.type?.charAt(0).toUpperCase() + category.type?.slice(1)}
                 </td>
                 <th>
                     <div
@@ -58,7 +70,9 @@ export default function Projects(props: Props) {
                             onClick={() => props.setSingleProject(props.project)}
                             htmlFor="edit-project" className="cursor-pointer"><BiMessageSquareEdit className="h-5 w-5" /></label>
 
-                        <MdDeleteForever className="h-5 w-5" />
+                        <MdDeleteForever
+                            onClick={() => handleDelete(_id)}
+                            className="h-5 w-5" />
                     </div>
                 </th>
             </tr>
