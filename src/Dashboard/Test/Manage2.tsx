@@ -4,7 +4,7 @@ import '../Editor.scss';
 export default function Manage2() {
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/v1/projects/all")
+        axios.get(`${process.env.REACT_APP_SERVER}/projects/all`)
             .then(res => {
                 console.log(res.data);
                 setData(res.data)

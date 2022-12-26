@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useCatagories = () => {
     const [catagories, setCatagories] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:5000/api/v1/categories/all")
+        axios.get(`${process.env.REACT_APP_SERVER}/categories/all`)
             .then(res => {
                 // console.log(res.data.category);
                 setCatagories(res.data.category)

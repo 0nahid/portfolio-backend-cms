@@ -58,7 +58,7 @@ export default function AddProject() {
         }
         console.log(newData);
         setLoading(true);
-        axios.post("http://localhost:5000/api/v1/projects/new", newData)
+        axios.post(`${process.env.REACT_APP_SERVER}/projects/new`, newData)
             .then(res => {
                 if (res.status === 201) {
                     setLoading(false);
@@ -173,7 +173,7 @@ export default function AddProject() {
                     <div className="my-3 text-right">
                         <button
                             className="btn btn-primary text-white"
-                        disabled={loading}
+                            disabled={loading}
                         >
                             Save Project
                         </button>

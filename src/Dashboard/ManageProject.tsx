@@ -12,7 +12,7 @@ export default function ManageProject() {
         queryKey: ['projects'],
         queryFn: async () => {
             try {
-                const response = await axios(`${process.env.REACT_APP_SERVER}/api/v1/projects/all`)
+                const response = await axios(`${process.env.REACT_APP_SERVER}/projects/all`)
                 // console.log(response);
 
                 if (response.status !== 200) {
